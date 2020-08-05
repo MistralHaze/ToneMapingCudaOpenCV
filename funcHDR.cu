@@ -384,7 +384,7 @@ void findMinMaxLuminancy(const float* const d_logLuminance,
 	checkCudaErrors(cudaMemcpy((void*)&max_logLum, (void*)&d_maxLogLumPerBlock[0], sizeof(float), cudaMemcpyDeviceToHost));
 	checkCudaErrors(cudaMemcpy((void*)&min_logLum, (void*)&d_minLogLumPerBlock[0], sizeof(float), cudaMemcpyDeviceToHost));
 
-	// Set Luminance Range
+	// Set Luminance range
 	luminanceRange = max_logLum - min_logLum;
 	if (luminanceRange == 0)
 	{
